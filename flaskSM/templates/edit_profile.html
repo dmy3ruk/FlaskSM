@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Редагування профілю</h2>
+    <form action="#" method="POST">
+        <div class="form-group">
+            <label for="name">Ім'я</label>
+            <input type="text" id="name" name="name" placeholder="Ваше ім'я">
+        </div>
+        <div class="form-group">
+            <label for="email">Електронна пошта</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com">
+        </div>
+        <div class="form-group">
+            <label for="bio">Про себе</label>
+            <textarea id="bio" name="bio" placeholder="Розкажіть трохи про себе"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" placeholder="Новий пароль">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Зберегти зміни">
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+<script>
+document.getElementById('edit-btn').onclick = function () {
+
+}
+
+document.getElementById('close-btn').onclick = function () {
+    const dialog = document.getElementById('edit-dialog');
+    if (dialog) {
+        dialog.close();
+    }
+}
+</script>

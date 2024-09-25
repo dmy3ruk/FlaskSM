@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connectly</title>
+    <link rel="stylesheet" href="static/css/home.css">
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <ul>
+            <li><a href="{{ url_for("hello_world") }}" id="home"><img src="static/img/ic--round-home.svg"
+                                                                      alt="Home Icon"> Home</a></li>
+            <li><a href="{{ url_for("explore") }}" id="explore"><img src="static/img/ic--baseline-explore.svg"
+                                                                     alt="Explore Icon">
+                Explore</a></li>
+            <li><a href="{{ url_for("profile") }}" id="profile"><img src="static/img/iconamoon--profile.svg"
+                                                                     alt="Profile Icon">
+                Profile</a></li>
+            <li><a href="{{ url_for("post") }}" id="create"><img src="static/img/ic--round-plus.svg" alt="Create Icon">
+                Create</a>
+            </li>
+            <li><a href="{{ url_for("inbox") }}" id="inbox"><img src="static/img/material-symbols--inbox.svg"
+                                                                 alt="Inbox Icon">
+                Inbox</a></li>
+            <li><a href="{{ url_for("activity") }}" id="activity"><img src="static/img/ph--heart-bold.svg"
+                                                                       alt="Activity Icon">
+                Activity</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+    {% block content %}
+
+            <h1>Discover</h1>
+            <h2>For You</h2>
+        {% for post in posts %}
+            <div class="post">
+
+                <div class="post-header">
+                    <img src="static/profile_pic/{{ post.user.image_file }}" alt="WSJ Logo" class="profile-pic">
+                    <div class="post-info">
+                        <div class="username-container">
+                        <span class="username">{{ post.user.username }}</span>
+                            <span class="time">{{ post.date_posted }}</span>
+                        </div>
+
+                    </div>
+                </div>
+                <h3 class="title-post">{{ post.title }}</h3>
+                <p>{{ post.content }}</p>
+                {% if post.file != None %}
+                    <img src="static/post_img/{{ post.file }}" alt="AI Image 1" class="post-image">
+
+                {% endif %}
+                <div class="post-footer">
+                    <span>💬 432</span>
+                    <span>🔁 123</span>
+                    <span>❤️ 94</span>
+                    <span>📊 43</span>
+                </div>
+
+            </div>
+        {% endfor %}
+    </main>
+    {% endblock %}
+</div>
+</body>
+<script>
+    // Отримуємо поточний URL
+    const currentUrl = window.location.pathname;
+
+    // Функція для додавання класу 'active' до поточного пункту меню
+    function setActiveLink() {
+        const links = document.querySelectorAll('.sidebar ul li a');
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentUrl) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Викликаємо функцію при завантаженні сторінки
+    setActiveLink();
+
+   // Function to format time as "X time ago"
+function timeAgo(dateString) {
+    const now = new Date();
+    const postDate = new Date(dateString);
+    const secondsAgo = Math.floor((now - postDate) / 1000);
+
+    let interval = Math.floor(secondsAgo / 31536000); // 1 year = 31536000 seconds
+    if (interval >= 1) return interval + " year" + (interval > 1 ? "s" : "") + " ago";
+
+    interval = Math.floor(secondsAgo / 2592000); // 1 month = 2592000 seconds
+    if (interval >= 1) return interval + " month" + (interval > 1 ? "s" : "") + " ago";
+
+    interval = Math.floor(secondsAgo / 86400); // 1 day = 86400 seconds
+    if (interval >= 1) return interval + " day" + (interval > 1 ? "s" : "") + " ago";
+
+    interval = Math.floor(secondsAgo / 3600); // 1 hour = 3600 seconds
+    if (interval >= 1) return interval + " hour" + (interval > 1 ? "s" : "") + " ago";
+
+    interval = Math.floor(secondsAgo / 60); // 1 minute = 60 seconds
+    if (interval >= 1) return interval + " minute" + (interval > 1 ? "s" : "") + " ago";
+
+    return secondsAgo + " second" + (secondsAgo > 1 ? "s" : "") + " ago";
+}
+
+// Отримуємо всі елементи з класом 'time'
+const timeElements = document.querySelectorAll('.time');
+
+// Проходимося по кожному елементу і форматуємо час
+timeElements.forEach(timeElement => {
+    // Отримуємо час з елемента
+    const rawTime = timeElement.textContent;
+
+    // Використовуємо нашу функцію для формату часу
+    const formattedTime = timeAgo(rawTime);
+
+    // Замінюємо текст у елементі часу
+    timeElement.textContent = formattedTime;
+});
+
+
+</script>
+</html>

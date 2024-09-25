@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container-inbox">
+        <!-- Conversations Sidebar -->
+        <div class="conversation-list">
+            <h2>Conversations</h2>
+
+            <div class="conversation-item">
+                <img src="https://via.placeholder.com/50" alt="User Profile">
+                <div class="conversation-text">
+                    <h4>John Doe</h4>
+                    <p>you?</p>
+                </div>
+                <div class="time">14:00</div>
+            </div>
+
+            <div class="conversation-item">
+                <img src="https://via.placeholder.com/50" alt="User Profile">
+                <div class="conversation-text">
+                    <h4>Jane Smith</h4>
+                    <p>Let’s catch up soon!</p>
+                </div>
+                <div class="time">10:50</div>
+            </div>
+
+            <div class="conversation-item">
+                <img src="https://via.placeholder.com/50" alt="User Profile">
+                <div class="conversation-text">
+                    <h4>Bob Anderson</h4>
+                    <p>Can you send me the files?</p>
+                </div>
+                <div class="time">19:00</div>
+            </div>
+
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <img src="https://via.placeholder.com/50" alt="User Profile">
+                <h3>John Doe</h3>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages">
+                <div class="message received">Hey, how are you?</div>
+                <div class="message sent">I'm good, thanks! How about you?</div>
+                <div class="message received">I’m doing well too, just busy with work.</div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input">
+                <textarea placeholder="Type your message here"></textarea>
+                <button type="submit">Send</button>
+            </div>
+        </div>
+</div>
+{% endblock %}

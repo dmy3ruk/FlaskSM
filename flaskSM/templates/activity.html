@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="container-activity">
+        <h1>Recent Activity</h1>
+        <div class="activity-feed">
+            <!-- New Follower -->
+            <div class="activity-item">
+                <img src="https://via.placeholder.com/50" alt="User Profile">
+                <div class="activity-text">
+                    <h4>Someone followed you</h4>
+                    <p class="time">5 minutes ago</p>
+                </div>
+            </div>
+
+            <!-- New Like -->
+            <div class="activity-item">
+                <img class="like-icon" src="https://via.placeholder.com/20x20?text=👍" alt="Like Icon">
+                <div class="activity-text">
+                    <h4>Your post received a like</h4>
+                    <p class="time">10 minutes ago</p>
+                </div>
+            </div>
+
+            <!-- New Comment -->
+            <div class="activity-item">
+                <img class="comment-icon" src="https://via.placeholder.com/20x20?text=💬" alt="Comment Icon">
+                <div class="activity-text">
+                    <h4>Someone commented on your post</h4>
+                    <p class="time">20 minutes ago</p>
+                </div>
+            </div>
+
+            <!-- Multiple New Likes -->
+            <div class="activity-item">
+                <img class="like-icon" src="https://via.placeholder.com/20x20?text=👍" alt="Like Icon">
+                <div class="activity-text">
+                    <h4>Your photo received 5 new likes</h4>
+                    <p class="time">30 minutes ago</p>
+                </div>
+            </div>
+
+            <!-- New Follow Request -->
+            <div class="activity-item">
+                <img class="follow-icon" src="https://via.placeholder.com/20x20?text=👥" alt="Follow Icon">
+                <div class="activity-text">
+                    <h4>You have a new follow request</h4>
+                    <p class="time">1 hour ago</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

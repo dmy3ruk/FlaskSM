@@ -1,0 +1,178 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="profile">
+        <div class="user-info">
+            <img src="{{ profile_img }}" alt="User Photo" class="profile-img">
+            <h2>{{ current_user.username }}</h2>
+
+            <div class="stats">
+                <h4>{{ count }} Posts</h4>
+                <h4>345 Followers</h4>
+                <h4>21 Following</h4>
+            </div>
+            <div class="bio">
+                <h5>{{ current_user.bio }}</h5>
+            </div>
+
+            <div class="buttons">
+                <button id="edit-btn">Edit profile</button>
+            </div>
+        </div>
+
+        <div class="posts">
+            <h3>Posts</h3>
+
+            {% for post in posts %}
+            <div class="post">
+                <button class="dots-btn" id="edit-post" data-post-id="{{ post.id }}">...</button>
+                <h3>{{ post.title }}</h3>
+                <div class="post-options">
+                    <div class="dropdown-menu">
+                        <a href="#" class="edit-post-btn" data-post-id="{{ post.id }}">Edit Post</a>
+                        <a href="/delete_post/{{ post.id }}" onclick="return confirm('Are you sure?')">Delete Post</a>
+                    </div>
+                </div>
+                <p>{{ post.content }}</p>
+
+                {% if post.file %}
+                <img src="{{ url_for('static', filename='post_img/' + post.file) }}" alt="Content Photo" class="post-image">
+                {% endif %}
+
+                <div class="post-footer">
+                    <span>💬 432</span>
+                    <span>🔁 123</span>
+                    <span>❤️ 94</span>
+                    <span>📊 43</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Модальне вікно для редагування профілю -->
+    <dialog id="editProfileModal">
+        <div>
+            <span class="close">&times;</span>
+            <h2>Редагування профілю</h2>
+
+            <form action="{{ url_for('profile') }}" method="POST" enctype="multipart/form-data">
+                {{ form.csrf_token }}
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <label for="username">Ім'я користувача</label>
+                    {{ form.username(value=current_user.username) }}
+                </div>
+                <div class="form-group">
+                    <label for="email">Електронна пошта</label>
+                    {{ form.email(value=current_user.email) }}
+                </div>
+                <div class="form-group">
+                    <label for="bio">Про себе</label>
+                    {{ form.bio(value=current_user.bio, class="bio") }}
+                </div>
+                <div class="form-group">
+                    <label for="profile_img">Завантажити нове фото профілю</label>
+                    {{ form.file }}
+                </div>
+                <div class="form-group">
+                    {{ form.submit }}
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Модальне вікно для редагування поста -->
+    <dialog id="editPostModal">
+        <div>
+            <span class="close">&times;</span>
+            <h2>Редагування поста</h2>
+
+            <form action="{{ url_for('profile') }}" method="POST" enctype="multipart/form-data">
+                {{ edit_post_form.csrf_token }}
+                {{ edit_post_form.hidden_tag() }}
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    {{ edit_post_form.title }}
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    {{ edit_post_form.content }}
+                </div>
+                <div class="form-group">
+                    {{ edit_post_form.submit }}
+                </div>
+                <input type="hidden" name="post_id" id="post_id">
+            </form>
+        </div>
+    </dialog>
+</div>
+
+<script>
+    // Модальне вікно для редагування профілю
+    const profileModal = document.getElementById('editProfileModal');
+    const editBtn = document.getElementById('edit-btn');
+    const closeBtns = document.querySelectorAll('.close');
+
+    editBtn.addEventListener('click', () => {
+        profileModal.showModal();
+    });
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.closest('dialog').close();
+        });
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === profileModal) {
+            profileModal.close();
+        }
+    });
+
+    const postModal = document.getElementById('editPostModal');
+    const dots = document.getElementById('edit-post');
+    const closeEditBtns = document.querySelectorAll('.close');
+    dots.addEventListener('click', () => {
+        postModal.showModal();
+    });
+
+    closeEditBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.closest('dialog').close();
+        });
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === postModal) {
+            postModal.close();
+        }
+    });
+
+    {#// Модальне вікно для редагування поста#}
+    {#const postModal = document.getElementById('editPostModal');#}
+    {#const editPostBtns = document.querySelectorAll('.edit-post-btn');#}
+    {##}
+    {#editPostBtns.forEach(btn => {#}
+    {#    btn.addEventListener('click', (event) => {#}
+    {#        event.preventDefault();#}
+    {#        const postId = btn.getAttribute('data-post-id');#}
+    {#        const postTitle = btn.closest('.post').querySelector('h3').textContent;#}
+    {#        const postContent = btn.closest('.post').querySelector('p').textContent;#}
+    {##}
+    {#        document.getElementById('post_id').value = postId;#}
+    {#        document.querySelector('#editPostModal input[name="title"]').value = postTitle;#}
+    {#        document.querySelector('#editPostModal textarea[name="content"]').value = postContent;#}
+    {##}
+    {#        postModal.showModal();#}
+    {#    });#}
+    {#});#}
+    {##}
+    {#window.addEventListener('click', (event) => {#}
+    {#    if (event.target === postModal) {#}
+    {#        postModal.close();#}
+    {#    }#}
+    {#});#}
+</script>
+{% endblock %}

@@ -1,0 +1,739 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f8fa;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    margin-left: 50px;
+    padding-top: 20px;
+}
+
+.user-info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.buttons {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#edit-btn {
+    margin: 0 auto;
+}
+
+
+.buttons button {
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submit-post {
+    display: inline-block;
+}
+
+.profile-img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    margin: 0 auto;
+}
+
+.stats{
+    margin: 0 auto;
+}
+h4 {
+    display: inline-block;
+    margin-right: 20px; /* Відстань між елементами */
+}
+
+
+.add-content {
+    height: 500px;
+    background-color: #ffffff;
+    border: 1px solid #e1e8ed;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.add-content-modal {
+    margin-left: 20px;
+}
+
+.add-content-modal textarea {
+    border: 1px solid rgba(66, 66, 66, 0.51);
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+
+.file-post{
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+}
+.title {
+    border: 1px solid rgba(66, 66, 66, 0.51);
+    width: 400px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.title-post{
+    margin-top: 10px;
+}
+
+
+.file-and-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Додає простір між полем і кнопкою */
+    margin-top: 80px;
+}
+
+
+.file-and-button label {
+    margin-right: 20px;
+}
+
+#image {
+    width: 200px;
+    height: 30px;
+    border: none;
+}
+
+.submit-post {
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.add-content-modal button {
+    margin-left: 100px;
+    margin-right: 470px;
+}
+
+.add-content-modal label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+label {
+    margin-top: 60px;
+}
+
+.content-img {
+    width: 550px;
+    height: 550px;
+}
+
+input::file-selector-button {
+    height: 30px;
+    width: 85px;
+    font-weight: normal;
+    color: rgba(66, 66, 66, 0.51);
+    background-color: #ffffff;
+    padding: 0.5em;
+    border: 1px solid #424242;
+    border-radius: 5px;
+}
+
+#image {
+    width: 200px;
+    height: 25px;
+    border: none;
+}
+
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: rgb(66, 66, 66);
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+
+}
+
+.sidebar ul li a img {
+    margin-right: 10px;
+    width: 28px;
+    height: 28px;
+}
+
+.sidebar ul li a.active {
+
+    border-radius: 10px; /* округлені краї обводки */
+    padding: 5px; /* додатковий простір всередині обводки */
+    text-decoration: none;
+    background-color: #d9b7ff;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px 40px;
+    overflow-y: auto;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #657786;
+    margin: 5px auto;
+}
+
+.profile-pic{
+    width: 70px;
+
+}
+.post {
+    background-color: #ffffff;
+    border: 1px solid #e1e8ed;
+    border-radius: 15px;
+    padding: 35px;
+
+    margin-bottom: 20px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+}
+
+.buttons-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.username-container {
+    margin-bottom: 5%;
+    margin-left: 10px;
+    display: flex;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content; /* Динамічна ширина, залежить від довжини нікнейму */
+    padding-right: 10px; /* Додаємо трохи відступу справа для часу */
+}
+
+.post-image {
+    width: 70%;
+    height: 70%;
+    margin-left: 150px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.details{
+}
+.post-footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #657786;
+}
+
+.post input {
+    width: 600px;
+    height: 30px;
+    align-content: center;
+    background-color: rgba(238, 238, 238, 0.81);
+    border-radius: 10px;
+    border: 1px solid silver;
+}
+
+.recomendations {
+    height: 600px;
+}
+
+.explore input {
+    margin: 0px 0px 0px 10px;
+    width: 870px;
+    height: 30px;
+    align-content: center;
+    background-color: rgba(238, 238, 238, 0.81);
+    border-radius: 10px;
+    border: 1px solid silver;
+}
+
+
+
+.container-activity {
+    display: block;
+    width: 900px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.activity-feed {
+    margin-top: 50px;
+    margin-right: 90px;
+}
+
+.activity-item {
+    background-color: #ffffff;
+    border: 1px solid #e1e8ed;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.activity-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.activity-text {
+    flex-grow: 1;
+}
+
+.activity-text h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.activity-text p {
+    margin: 5px 0 0;
+    color: #657786;
+}
+
+
+
+.like-icon, .comment-icon, .follow-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+
+.container-inbox {
+    background-color: #ffffff;
+    border: 1px solid #e1e8ed;
+    display: flex;
+    border-radius: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+    padding: 20px;
+    height: 670px;
+}
+
+/* Sidebar - List of Conversations */
+.conversation-list {
+    width: 30%;
+    background-color: #ffffff;
+    border-right: 1px solid #e1e8ed;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.conversation-list h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.conversation-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.conversation-item:hover {
+    background-color: #eaeaea;
+}
+
+.conversation-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.conversation-text {
+    flex-grow: 1;
+}
+
+.conversation-text h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.conversation-text p {
+    margin: 5px 0 0;
+    color: #657786;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+.time {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: gray;
+    margin-right: 0px; /* Відстань між нікнеймом та часом */
+}
+
+/* Chat Window */
+.chat-window {
+    width: 65%;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e1e8ed;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.chat-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    flex-grow: 1;
+    display: inline-block;
+    max-width: 60%;
+}
+
+.message.sent {
+    background-color: #9b59b6;
+    color: white;
+    align-self: flex-end;
+}
+
+.message.received {
+    background-color: #f1f0f0;
+    color: #333;
+    align-self: flex-start;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #e1e8ed;
+    padding-top: 15px;
+    margin-top: 320px;
+}
+
+.chat-input textarea {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #e1e8ed;
+    border-radius: 10px;
+    resize: none;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.chat-input button {
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #8e44ad;
+}
+
+.post-options {
+    position: relative;
+    display: inline;
+}
+
+.dots-btn {
+    margin-right: 20px;
+    margin-top: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    float: right;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ddd;
+}
+
+/* Styles for the main content */
+dialog.edit {
+    width: 400px;
+    border-radius: 10px;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+
+
+
+.edit label{
+    display: block;
+    margin-left: 50px;
+}
+.edit input{
+    display: block;
+    margin-left: 50px;
+    margin-top: 10px;
+    background: #dddddd;
+    border-radius: 10px;
+    border: none;
+    border-bottom: #dddddd;
+    height: 20px;
+    width: 100px;
+}
+
+.edit img{
+     display: block;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+/* Основні стилі для модального вікна */
+/* Основні стилі для модального вікна */
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 100%;
+    background-color: #fff;
+    position: relative;
+    z-index: 1001;
+    transition: opacity 0.3s;
+}
+
+/* Заголовок модального вікна */
+dialog h2 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* Стиль для кнопки закриття */
+.close {
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #333;
+}
+
+/* Стиль форми */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Мітки для полів */
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Текстові поля і textarea */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+/* Фокус для полів вводу */
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #7b1ac6;
+    outline: none;
+}
+
+/* Стиль для textarea */
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Стиль для кнопки завантаження зображення */
+input[type="file"] {
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Стиль кнопки для збереження змін */
+.form-group input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #7b1ac6;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Зміна кольору кнопки при наведенні */
+.form-group input[type="submit"]:hover {
+    background-color: #7b1ac6;
+}
+
+/* Стилі для затемнення */
+.overlay {
+    display: none; /* Початково приховано */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
+    z-index: 1000; /* Нижче модального вікна */
+}
+
+/* Анімація показу модалки */
+dialog[open] {
+    animation: fadeIn 0.1s ease-in-out;
+}
+
+/* Анімація затемнення */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.bio {
+    padding: 0px;
+    border-radius: 5px;
+    width: 80%; /* Adjust the width to your preference */
+    max-width: 400px; /* Maximum width to prevent stretching too wide */
+    text-align: center;
+    margin: 0 auto;
+}

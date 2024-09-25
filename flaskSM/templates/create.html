@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block content %}
+    <div class="add-content">
+        <div class="add-content-modal">
+            <form action="{{ url_for('post') }}" , method='POST', enctype="multipart/form-data">
+
+
+                {{ form.hidden_tag() }}
+                {{ form.csrf_token }}
+                <label for="title">Post Title</label>
+                {{ form.title(class = "title") }}
+                <!-- Контент поста -->
+                <label for="content">Post Content</label>
+                {{ form.content }}
+                <!-- Додати зображення і кнопку -->
+                <div class="file-and-button">
+                    <div>
+                        <label>Select photo</label>
+                         {% if form.file.errors %}
+                        {{ form.file(class='input-group-invalid') }}
+                             {% for error in form.file.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                             {% else %}
+                             {{ form.file(class='file-post') }}
+                        {% endif %}
+                    </div>
+
+                    <div>
+                        {{ form.submit(class="submit-post") }}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

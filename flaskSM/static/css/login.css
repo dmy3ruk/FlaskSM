@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 360px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.menu-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.input-group-invalid {
+     border: 1px solid #dc3545; /* Red border for invalid input */
+    background-color: white; /* Reset any background color */
+    box-shadow: none; /* Remove any shadow that might create an additional border */
+    outline: none; /
+    border-color: #e34242;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+.invalid-feedback {
+    margin-right: 200px;
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 5px;
+    margin-bottom: 7px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #c156ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.register-btn {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    color: #424242;
+
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.register-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.login-btn:hover {
+    background-color: #7b1ac6;
+}
+
+p {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #888;
+}
+
+.social-login {
+    display: flex;
+    justify-content: space-between;
+}
+
+.facebook-btn, .google-btn {
+    width: 48%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+}
+
+.facebook-btn:hover, .google-btn:hover {
+    background-color: #e0e0e0;
+}
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.label {
+    position: absolute;
+    margin-left: 30px;
+    font-size: 14px;
+}
+
+.forgot-password {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 0px;
+    text-align: right;
+}
+
+.flashes{
+    color: #dc3545;
+    margin-bottom: 10px;
+}

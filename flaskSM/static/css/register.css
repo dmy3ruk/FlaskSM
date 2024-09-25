@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.register-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 360px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.menu-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group-invalid {
+     border: 1px solid #dc3545; /* Red border for invalid input */
+    background-color: white; /* Reset any background color */
+    box-shadow: none; /* Remove any shadow that might create an additional border */
+    outline: none; /
+    border-color: #e34242;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+
+.input-group input {
+    box-shadow: none; /* Remove any shadow */
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #c156ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.register-btn:hover {
+    background-color: #9d48d2;
+}
+
+p {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #888;
+}
+
+.social-register {
+    display: flex;
+    justify-content: space-between;
+}
+
+.facebook-btn, .google-btn {
+    width: 48%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+}
+
+.facebook-btn:hover, .google-btn:hover {
+    background-color: #e0e0e0;
+}
+
+a {
+    color: #7b1ac6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
